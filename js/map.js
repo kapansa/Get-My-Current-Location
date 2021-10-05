@@ -30,21 +30,13 @@ getlocation.addEventListener("click", () => {
         marker.setLatLng([latitude, longitude]);
         mymap.setView([latitude, longitude], 6);
       } else {
-        L.marker([0, 0])
-          .addTo(map)
-          .bindPopup(
-            "A pretty CSS3 popup.<br> Easily customizable.<p>Access to current Location <br>has been denied!</p>"
-          )
-          .openPopup();
+        marker.setLatLng([0, 0]);
       }
     });
 
   } else {
 
-    L.marker([0, 0])
-      .addTo(map)
-      .bindPopup("<p>Location is not available!</p>")
-      .openPopup();
+    marker.setLatLng([0, 0]);
 
   }
 });
